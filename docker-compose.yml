@@ -1,0 +1,23 @@
+# # docker-compose
+# # version: '3.8'
+
+services:
+  frontend:
+    image: webapp
+    build: 
+      context: ./client_ui
+      args:
+        ENV_VARIABLE: ${ENV_VARIABLE}
+        NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+    restart: always
+    ports:
+      - 3000:3000
+    # networks:
+    #   - my_network
+
+
+
+
+# networks:
+#   my_network:
+#     external: true
